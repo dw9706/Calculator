@@ -15,7 +15,24 @@ public class Calculator {
         System.out.print("두 번째 숫자를 입력하세요: ");
         int num2 = sc.nextInt();
 
-        System.out.println("num1 = " + num1);
-        System.out.println("num2 = " + num2);
+        // 연산 로직
+        int result = 0;
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '/':
+                if(num2 != 0) result = num1 / num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            default:
+                System.out.println("사칙연산 기호가 아닙니다.");
+        }
+
     }
 }
