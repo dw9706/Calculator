@@ -1,6 +1,9 @@
 package org.dongwon;
 
+import java.util.*;
+
 public class Calculator {
+    Queue<Integer> results = new LinkedList<>();
 
     public int calculate(int num1, int num2, char operation) {
         int result = 0;
@@ -21,7 +24,9 @@ public class Calculator {
             default:
                 throw new IllegalArgumentException("사칙연산 기호가 아닙니다.");
         }
-
+        results.offer(result);
         return result;
     }
+
+
 }
