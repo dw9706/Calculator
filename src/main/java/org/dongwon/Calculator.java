@@ -3,7 +3,7 @@ package org.dongwon;
 import java.util.*;
 
 public class Calculator {
-    Queue<Integer> results = new LinkedList<>();
+    private Queue<Integer> results = new LinkedList<>();
 
     public int calculate(int num1, int num2, char operation) {
         int result = 0;
@@ -28,5 +28,11 @@ public class Calculator {
         return result;
     }
 
+    public Queue<Integer> getResults() {
+        return results;
+    }
 
+    public void setResults(Queue<Integer> results) {
+        this.results = results;
+    }
 }
