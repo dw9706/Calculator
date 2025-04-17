@@ -11,11 +11,11 @@ public class App {
             // nextInt()를 호출하면 개행문자가 남아 String을 받아 Integer로 파싱.
             int num1 = Integer.parseInt(sc.nextLine());
 
-            System.out.print("사칙연산 기호를 입력하세요: ");
-            char operation = sc.nextLine().trim().charAt(0);
-
             System.out.print("두 번째 숫자를 입력하세요: ");
             int num2 = Integer.parseInt(sc.nextLine());
+
+            System.out.print("사칙연산 기호를 입력하세요: ");
+            char operation = sc.nextLine().trim().charAt(0);
 
             // 연산 로직
             int result = 0;
