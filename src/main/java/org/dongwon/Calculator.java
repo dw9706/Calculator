@@ -28,6 +28,10 @@ public class Calculator {
         return result;
     }
 
+    public void removeResult() {
+        results.poll();
+    }
+
     public Queue<Integer> getResults() {
         return results;
     }
