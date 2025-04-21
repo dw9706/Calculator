@@ -5,7 +5,7 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        ArithmeticCalculator<Double> calculator = new ArithmeticCalculator<>();
         while (true) {
             try {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -18,7 +18,7 @@ public class App {
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 char operation = sc.nextLine().trim().charAt(0);
 
-                int result = calculator.calculate(num1, num2, operation);
+                Number result = calculator.calculate(num1, num2, operation);
                 System.out.println("결과: " + result);
 
             } catch (IllegalArgumentException e) {

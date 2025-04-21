@@ -2,24 +2,26 @@ package org.dongwon;
 
 import java.util.*;
 
-public class Calculator {
-    private Queue<Integer> results = new LinkedList<>();
+public class ArithmeticCalculator<T extends Number> {
+    private Queue<Number> results = new LinkedList<>();
 
-    public int calculate(int num1, int num2, char operation) {
-        int result = 0;
+    public Number calculate(T num1, T num2, char operation) {
+        Number result;
+        double num1Double = num1.doubleValue();
+        double num2Double = num2.doubleValue();
         switch (operation) {
             case '+':
-                result = num1 + num2;
+                result = num1Double + num2Double;
                 break;
             case '-':
-                result = num1 - num2;
+                result = num1Double - num2Double;
                 break;
             case '/':
-                if (num2 != 0) result = num1 / num2;
+                if (num2Double != 0.0) result = num1Double / num2Double;
                 else throw new IllegalArgumentException("나눗셈 연산 시 두번째 숫자는 0이 아니어야 합니다.");
                 break;
             case '*':
-                result = num1 * num2;
+                result = num1Double * num2Double;
                 break;
             default:
                 throw new IllegalArgumentException("사칙연산 기호가 아닙니다.");
@@ -32,11 +34,11 @@ public class Calculator {
         results.poll();
     }
 
-    public Queue<Integer> getResults() {
+    public Queue<Number> getResults() {
         return results;
     }
 
-    public void setResults(Queue<Integer> results) {
+    public void setResults(Queue<Number> results) {
         this.results = results;
     }
 }
