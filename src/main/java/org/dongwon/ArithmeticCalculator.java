@@ -9,18 +9,20 @@ public class ArithmeticCalculator<T extends Number> {
         Number result;
         double num1Double = num1.doubleValue();
         double num2Double = num2.doubleValue();
-        switch (operation) {
-            case '+':
+
+        OperatorType operatorType = OperatorType.of(operation);
+        switch (operatorType) {
+            case ADD:
                 result = num1Double + num2Double;
                 break;
-            case '-':
+            case MINUS:
                 result = num1Double - num2Double;
                 break;
-            case '/':
+            case DIVIDE:
                 if (num2Double != 0.0) result = num1Double / num2Double;
                 else throw new IllegalArgumentException("나눗셈 연산 시 두번째 숫자는 0이 아니어야 합니다.");
                 break;
-            case '*':
+            case MULTI:
                 result = num1Double * num2Double;
                 break;
             default:
@@ -41,4 +43,5 @@ public class ArithmeticCalculator<T extends Number> {
     public void setResults(Queue<Number> results) {
         this.results = results;
     }
+
 }
