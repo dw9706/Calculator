@@ -1,6 +1,7 @@
 package org.dongwon;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
     private Queue<Number> results = new LinkedList<>();
@@ -42,6 +43,11 @@ public class ArithmeticCalculator<T extends Number> {
 
     public void setResults(Queue<Number> results) {
         this.results = results;
+    }
+
+    public void printResultsLessThan(Number number) {
+        List<Number> resultLessThan = results.stream().filter(n -> number.doubleValue() > n.doubleValue()).toList();
+        System.out.println(resultLessThan);
     }
 
 }
